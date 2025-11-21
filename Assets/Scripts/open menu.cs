@@ -3,6 +3,7 @@ using UnityEngine;
 public class openmenu : MonoBehaviour
 {
     public GameObject menu;
+    public BasicPlayerMovement BPM;
     public bool open = false;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -25,10 +26,12 @@ public class openmenu : MonoBehaviour
         else if (menu.activeInHierarchy)
         {
             Cursor.lockState = CursorLockMode.None;
+            BPM.speed = 0f;
         }
         else
         {
             Cursor.lockState = CursorLockMode.Locked;
+            BPM.speed = 5f;
         }
     }
 }
