@@ -1,22 +1,23 @@
+using System;
 using UnityEngine;
 
 public class DetectPlayer : MonoBehaviour
 {
     public bool searchForPlayer = false;
-    
-    void OnTriggerStay(Collider other)
+
+    private void OnCollisionStay(Collision other)
     {
-        if (other.tag == "Player")
+        if (CompareTag("Player"))
         {
-            searchForPlayer = true;
+            print("Player is detected");
         }
     }
 
-    void OnTriggerExit(Collider other)
+    void OnCollisionExit(Collision other)
     {
-        if (other.tag == "Player")
+        if (other.gameObject.CompareTag("Player"))
         {
-            searchForPlayer = false;
+            print("Exited");
         }
     }
 }

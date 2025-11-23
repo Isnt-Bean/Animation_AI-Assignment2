@@ -3,8 +3,9 @@ using UnityEngine;
 public class openmenu : MonoBehaviour
 {
     public GameObject menu;
+    public GameObject hud;
     public BasicPlayerMovement BPM;
-    public bool open = false;
+    private bool open = false;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -26,12 +27,16 @@ public class openmenu : MonoBehaviour
         else if (menu.activeInHierarchy)
         {
             Cursor.lockState = CursorLockMode.None;
-            BPM.speed = 0f;
+            hud.SetActive(false);
+            Time.timeScale = 0.001f;
+            //BPM.speed = 0f;
         }
         else
         {
             Cursor.lockState = CursorLockMode.Locked;
-            BPM.speed = 5f;
+            hud.SetActive(true);
+            Time.timeScale = 1;
+            //BPM.speed = 5f;
         }
     }
 }
