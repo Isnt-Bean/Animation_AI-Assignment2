@@ -10,12 +10,10 @@ public class BasicPlayerMovement : MonoBehaviour
 
     private CharacterController controller;
     private Vector3 velocity;
-    private Rigidbody rb;
 
     void Start()
     {
         controller = GetComponent<CharacterController>();
-        rb = GetComponent<Rigidbody>();
     }
 
     void Update()
@@ -40,5 +38,20 @@ public class BasicPlayerMovement : MonoBehaviour
         {
             velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
         }
+        
+        
+        
+        
+        //https://www.youtube.com/watch?v=4J0tmIOwxOA
+        float movementAmount = Mathf.Abs(moveX) + Mathf.Abs(moveZ);
+        
+        var movementInput = (new Vector3(moveX, 0, moveZ)).normalized;
+
+        if (movementAmount > 0)
+        {
+            transform.rotation = Quaternion.LookRotation(movementInput);
+        }
+        
     }
+
 }

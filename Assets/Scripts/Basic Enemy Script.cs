@@ -14,13 +14,5 @@ public class BasicEnemyScript : MonoBehaviour
     {
         agent.destination = Target.transform.position;
     }
-
-
-    void OnCollisionEnter(Collision collision)
-    {
-        if (CompareTag("Player"))
-        {
-            print("Player Hit");
-        }
-    }
+    
 }

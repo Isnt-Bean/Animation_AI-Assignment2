@@ -4497,7 +4497,7 @@ MonoBehaviour:
   moveSpeed: 5
   gravity: -9.81
   jumpHeight: 1.5
-  turnSpeed: 500
+  turnSpeed: 100
 --- !u!54 &882882181
 Rigidbody:
   m_ObjectHideFlags: 0

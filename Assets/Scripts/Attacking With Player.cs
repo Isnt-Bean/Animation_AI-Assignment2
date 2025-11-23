@@ -54,7 +54,6 @@ public class AttackingWithPlayer : MonoBehaviour
      what I need to create
      
     - animations for enemies and player - after prototype
-    - player rotation - prototype
     
     */
 }
